@@ -6,7 +6,7 @@
 function updateBatteryStatus(battery) {  
   bt.innerHTML = `${Math.floor(battery.level * 100)}%`; 
   if (battery.charging) {    
-    bt.innerHTML += '(Its in 👀)';  
+    bt.innerHTML += ' (Its in 👀)';  
   }    }  
 function batteryUpdate() {   
   navigator.getBattery().then(battery => {     
