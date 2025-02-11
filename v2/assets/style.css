@@ -1,0 +1,291 @@
+
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/microsoft/cascadia-code/main/CascadiaCode.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: linear-gradient(145deg, #0a0a0b, #000000);
+    font-family: 'Cascadia Code', monospace; /* Fall back to monospace if Cascadia isn't available */
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+}
+
+.codeBox {
+    display: grid !important;
+    place-items: center !important; 
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        font-size: 16px; /* Normal font for larger devices */
+    }
+}
+
+/* Code block style with matching gradient */
+pre {
+    background: linear-gradient(145deg, #262628, #1c1c1e); /* Matching dark gradient */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    font-size: 14px; /* Slightly smaller font inside the pre */
+    color: #f1f1f1; /* Light text color for better contrast */
+    width: 90%; /* Full width for smaller screens */
+    max-width: 600px; /* Maximum width on larger screens */
+    margin: 40px auto; /* Centering with margin */
+    text-align: left;
+    overflow: hidden;
+    word-wrap: break-word; /* Ensure text wraps inside the box */
+}
+
+/* Code block colors */
+span {
+    color: #76baff; /* Light blue for default text */
+}
+
+span.hljs-string {
+    color: #ff6188; /* Pinkish red for strings */
+}
+span.hljs-keyword{
+    color: #ffd866; /* Yellow for keywords */
+}
+span.hljs-keyword2{
+    color: #ab9df2; /* Soft purple for other keywords */
+}
+
+
+
+@media (min-width: 768px) {
+    pre {
+        padding: 30px;
+        font-size: 16px; /* Slightly bigger font for larger screens */
+        margin: 60px auto; /* More margin for better spacing on PC */
+    }
+}
+
+.icon-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 25px; 
+    padding: 6px;
+    overflow: hidden;
+}
+.sticky-icons {
+    display: flex;
+    gap: 8px;
+}
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; 
+    opacity: 0.5;
+    padding: 6px; 
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.icon:hover {
+    opacity: 1;
+    background-color: transparent;
+} 
+.icon:focus,
+.icon:active {
+    background-color: transparent !important;
+    box-shadow: none !important; 
+    border: none !important; 
+    color: inherit !important; 
+}
+
+
+
+/* Music */
+
+.player-container {
+  background: linear-gradient(145deg, #1c1c1e, #2c2c2e);
+  border-radius: 20px;
+  padding: 15px;
+  width: 90%;  /* Max width for mobile */
+  max-width: 600px;  /* Limit width on larger screens */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #fff;
+  position: relative;  /* Ensure it stays above the footer */
+  overflow: hidden;
+}
+
+.track-details {
+  margin-bottom: 15px;
+}
+
+#track-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#track-artist {
+  font-size: 10px;
+  color: #aaa;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.control-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make the button a perfect circle */
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center; /* Center the icon */
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+.control-button i {
+    font-size: 20px; /* Adjust icon size */
+}
+
+
+.control-button:hover {
+  background-color: #007aff;
+  transform: scale(1.1); /* Add a scaling effect on hover */
+  box-shadow: 0px 6px 15px rgba(0, 122, 255, 0.5); /* A stronger shadow on hover */
+}
+
+.control-button:active {
+  transform: scale(0.95); /* A smaller scaling effect when clicked */
+  box-shadow: 0px 4px 8px rgba(0, 122, 255, 0.4); /* Softer shadow on active click */
+}
+
+.progress-container {
+  background-color: #3a3a3c;
+  border-radius: 10px;
+  height: 4px;
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+}
+
+#progress-bar {
+  background-color: #007aff;
+  border-radius: 10px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 600px) {
+  .player-container {
+    width: 600px;  /* Fixed width on larger screens */
+  }
+
+  .control-button {
+    padding: 12px; /* Larger padding on larger screens */
+    font-size: 20px; /* Larger icon size on PC */
+  }
+
+  .control-button i {
+    font-size: 18px; /* Adjust icon size accordingly */
+  }
+}
+
+@media (max-width: 600px) {
+  .player-container {
+    width: 90%;  /* Responsive for smaller devices */
+  }
+
+  .control-button {
+    padding: 8px; /* Slightly smaller padding on smaller screens */
+    font-size: 16px; /* Adjust icon size for mobile */
+  }
+
+  .control-button i {
+    font-size: 14px; /* Adjust icon size accordingly */
+  }
+}
+
+
+/* Status Bar */
+.top-bar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    color: white;
+    padding: 5px 0px;
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+#time {
+    font-size: 16px; /* Slightly larger font size for the time */
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Increase spacing between icons */
+}
+
+.icons i {
+    font-size: 15px; /* Increase icon size */
+    color: white; /* Change icon color to white */
+}
+
+#battery {
+    font-size: 15px; /* Slightly larger font size for battery percentage */
+}  
+
+
+ .datetime-container {
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.current-time {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.current-date {
+    font-size: 12px;
+    color: #ffffff;
+}
